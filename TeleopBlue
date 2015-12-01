@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.ServoController;
  * @version: 11/1/2015
  * Enables control of the robot via the gamepad
  */
-public class Teleop extends OpMode
+public class TeleopBlue extends OpMode
 {
 
 	DcMotor motorLeftBack;//Declare Motors for Drive Train
@@ -44,7 +44,7 @@ public class Teleop extends OpMode
 	/**
 	 * Constructor
 	 */
-	public Teleop()
+	public TeleopBlue()
 
 	{
 	}
@@ -101,8 +101,8 @@ public class Teleop extends OpMode
 		screwPosition1 = .4;
 		screwPosition2 = .6;
 
-        holdLeft.setPosition(1);//sets initial hook position
-		holdRight.setPosition(1);
+		holdLeft.setPosition(1);//sets initial hook position
+		holdRight.setPosition(.25);
 
 		leverBlue.setPosition(1);//Initial position
 
@@ -121,8 +121,8 @@ public class Teleop extends OpMode
 	@Override
 	public void loop() {
 
-        float left = -gamepad1.left_stick_y;//gets information from joystick
-        float right = -gamepad1.right_stick_y;
+		float left = -gamepad1.left_stick_y;//gets information from joystick
+		float right = -gamepad1.right_stick_y;
 		float powerScrew = -gamepad2.left_stick_y;
 		float powerHang = -gamepad2.right_stick_y;
 
@@ -228,7 +228,7 @@ public class Teleop extends OpMode
 
 
 
-}
+	}
 
 	/*
 	 * Code to run when the op mode is first disabled goes here
@@ -239,7 +239,7 @@ public class Teleop extends OpMode
 	public void stop() {
 
 	}
-	
+
 	/*
 	 * This method scales the joystick input so for low joystick values, the 
 	 * scaled value is less than linear.  This is to make it easier to drive
@@ -248,10 +248,10 @@ public class Teleop extends OpMode
 	double scaleInput(double dVal)  {
 		double[] scaleArray = { 0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
 				0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
-		
+
 		// get the corresponding index for the scaleInput array.
 		int index = (int) (dVal * 16.0);
-		
+
 		// index should be positive.
 		if (index < 0) {
 			index = -index;
