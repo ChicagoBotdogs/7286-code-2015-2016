@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.ServoController;
  * @version: 11/1/2015
  * Enables control of the robot via the gamepad
  */
-public class Teleop extends OpMode
+public class TeleopRed extends OpMode
 {
 
 	DcMotor motorLeftBack;//Declare Motors for Drive Train
@@ -44,7 +44,7 @@ public class Teleop extends OpMode
 	/**
 	 * Constructor
 	 */
-	public Teleop()
+	public TeleopRed()
 
 	{
 	}
@@ -101,10 +101,10 @@ public class Teleop extends OpMode
 		screwPosition1 = .4;
 		screwPosition2 = .6;
 
-        holdLeft.setPosition(1);//sets initial hook position
-		holdRight.setPosition(1);
+		holdLeft.setPosition(1);//sets initial hook position
+		holdRight.setPosition(.25);
 
-		leverBlue.setPosition(.5);//Initial position
+		leverRed.setPosition(.5);//Initial position
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
 		tiltRight.setPosition(screwPosition2);
@@ -209,11 +209,11 @@ public class Teleop extends OpMode
 
 		if (gamepad1.a) //hooks up or down
 		{
-			leverBlue.setPosition(.5);
+			leverRed.setPosition(.5);
 		}
 		if (gamepad1.b)
 		{
-			leverBlue.setPosition(1);
+			leverRed.setPosition(1);
 		}
 		// clip the position values so that they never exceed their allowed range.
 
