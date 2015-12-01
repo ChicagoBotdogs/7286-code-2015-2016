@@ -32,14 +32,6 @@ public class Teleop extends OpMode
 
 	ServoController screwController;//Declares servo controller
 
-	final static double LEFT_MIN_RANGE  = 0;
-	final static double LEFT_MAX_RANGE  = 1;
-	// position of the claw servo
-
-	final static double RIGHT_MIN_RANGE  = 0;
-	final static double RIGHT_MAX_RANGE  = 1;
-
-
 	double screwPosition1;//Declares values for initial screw position
 	double screwPosition2;
 	// amount to change the claw servo position by
@@ -103,10 +95,10 @@ public class Teleop extends OpMode
 
 		leadScrew=hardwareMap.dcMotor.get("leadScrew");
 
-		screwPosition1 = 1;
-		screwPosition2 = 0;
+		screwPosition1 = .4;
+		screwPosition2 = .6;
 
-        holdLeft.setPosition(0);//sets initial hook position
+        holdLeft.setPosition(1);//sets initial hook position
 		holdRight.setPosition(1);
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
@@ -179,8 +171,8 @@ public class Teleop extends OpMode
 
 		if (gamepad2.right_bumper) //right bumper tilts screw down
 		{
-			tiltLeft.setPosition(.5);
-			tiltRight.setPosition(.5);
+			tiltLeft.setPosition(.4);
+			tiltRight.setPosition(.6);
 		}
 		if (gamepad2.a)
 		{
@@ -199,14 +191,14 @@ public class Teleop extends OpMode
 		}
 
 
-		if (gamepad1.x) //right bumper tilts screw down
+		if (gamepad1.x) //hooks up or down
 		{
-			holdLeft.setPosition(.75);
+			holdLeft.setPosition(.25);
 			holdRight.setPosition(.25);
 		}
-		if (gamepad1.y) //right bumper tilts screw down
+		if (gamepad1.y) 
 		{
-			holdLeft.setPosition(0);
+			holdLeft.setPosition(1);
 			holdRight.setPosition(1);
 		}
 		// clip the position values so that they never exceed their allowed range.
