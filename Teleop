@@ -99,7 +99,7 @@ public class Teleop extends OpMode
 		screwPosition2 = .6;
 
         holdLeft.setPosition(1);//sets initial hook position
-		holdRight.setPosition(1);
+		holdRight.setPosition(.25);
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
 		tiltRight.setPosition(screwPosition2);
@@ -194,12 +194,12 @@ public class Teleop extends OpMode
 		if (gamepad1.x) //hooks up or down
 		{
 			holdLeft.setPosition(.25);
-			holdRight.setPosition(.25);
+			holdRight.setPosition(1);
 		}
 		if (gamepad1.y) 
 		{
 			holdLeft.setPosition(1);
-			holdRight.setPosition(1);
+			holdRight.setPosition(.25);
 		}
 		// clip the position values so that they never exceed their allowed range.
 
