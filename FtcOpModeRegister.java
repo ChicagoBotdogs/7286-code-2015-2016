@@ -29,6 +29,8 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register ("Tank Drive", WWTankDrive.class);
     manager.register ("Teleop",Teleop.class);
+    manager.register ("Red",TeleopRed.class);
+    manager.register ("Blue",TeleopBlue.class);
     manager.register ("Auto Blue Floor", WWAutoBlueFloor.class);
     manager.register ("Auto Red Floor", WWAutoRedFloor.class);
     manager.register ("Auto LeadScrew Test",WWLeadScrewTest.class);
