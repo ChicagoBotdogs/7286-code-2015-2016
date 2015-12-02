@@ -126,30 +126,22 @@ public class ClimbRed extends OpMode
 			motorRightBack.setPower(0);
 		}
 
-		if(time<1)//go forward for 1 second  screw tilts up
+		if(currentTime<.9)//go forward for 1 second  screw tilts up   APPROVED
 		{
 			count=1;
 			screwPosition = 1;
 		}
-        if (time>1 && time<1.5)//turn left
+        if (currentTime>.9 && currentTime<1.4)//turn left
 		{
 			count=3;
 		}
-		if(time>1.5 && time<10)//goes forward and drives up ramp
+		if(currentTime>1.4 && currentTime<5.4)//goes forward and drives up ramp
 		{
 			count=1;
 		}
-		if(time>2 && time<5)//screw goes out
+		if(currentTime>5.4)//screw goes out
 		{
-			screwPosition=3;
-		}
-		if(time>5 && time<5.01)//screw tilts down
-		{
-			screwPosition=2;
-		}
-		if(time>5.01 && time<10)//screw tilts down
-		{
-			screwPosition=4;
+			count=4;
 		}
 	}
 
