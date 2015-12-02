@@ -59,7 +59,7 @@ public class ClimbRed extends OpMode
 		if (screwPosition==0)
 		{
 			time.reset();
-			screwPosition =1;//time is zero
+			screwPosition =2;//time is zero\
 		}
 
 		if (screwPosition==1)
@@ -139,9 +139,14 @@ public class ClimbRed extends OpMode
 		{
 			count=1;
 		}
-		if(currentTime>5.4)//screw goes out
+		if(currentTime>5.4 && currentTime<15)//stop
+		{
+			screwPosition=3;
+		}
+		if(currentTime>15)
 		{
 			count=4;
+			screwPosition=5;
 		}
 	}
 
