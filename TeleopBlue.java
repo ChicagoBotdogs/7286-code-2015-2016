@@ -31,6 +31,7 @@ public class TeleopBlue extends OpMode
 	Servo holdRight;
 
 	Servo leverBlue;//left lever
+	Servo leverRed;
 
 	ServoController screwController;//Declares servo controller
 
@@ -89,7 +90,9 @@ public class TeleopBlue extends OpMode
 
 		screwController = hardwareMap.servoController.get("servoController");//creats servoControler
 		screwController.pwmEnable();
+		leverRed = hardwareMap.servo.get("leverRed");
 		leverBlue = hardwareMap.servo.get("leverBlue");
+
 
 		tiltLeft = hardwareMap.servo.get("tiltLeft");
 		tiltRight = hardwareMap.servo.get("tiltRight");
@@ -105,6 +108,7 @@ public class TeleopBlue extends OpMode
 		holdRight.setPosition(.25);
 
 		leverBlue.setPosition(1);//Initial position
+		leverRed.setPosition(0);
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
 		tiltRight.setPosition(screwPosition2);
