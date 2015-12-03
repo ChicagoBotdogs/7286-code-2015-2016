@@ -30,7 +30,8 @@ public class TeleopRed extends OpMode
 	Servo holdLeft;//Declares servo hooks on front for bars
 	Servo holdRight;
 
-	Servo leverRed;//left lever
+	Servo leverRed;
+	Servo leverBlue;//left lever
 
 	ServoController screwController;//Declares servo controller
 
@@ -90,6 +91,7 @@ public class TeleopRed extends OpMode
 		screwController = hardwareMap.servoController.get("servoController");//creats servoControler
 		screwController.pwmEnable();
 		leverRed = hardwareMap.servo.get("leverRed");
+		leverBlue = hardwareMap.servo.get("leverBlue");
 
 		tiltLeft = hardwareMap.servo.get("tiltLeft");
 		tiltRight = hardwareMap.servo.get("tiltRight");
@@ -104,7 +106,8 @@ public class TeleopRed extends OpMode
         holdLeft.setPosition(1);//sets initial hook position
 		holdRight.setPosition(.25);
 
-		leverRed.setPosition(.5);//Initial position
+		leverBlue.setPosition(1);//Initial position
+		leverRed.setPosition(0);
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
 		tiltRight.setPosition(screwPosition2);
