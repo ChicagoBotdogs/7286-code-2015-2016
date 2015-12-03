@@ -28,8 +28,6 @@ public class ClimbRed extends OpMode
 	int count=0;
 	int screwPosition=0;
 
-	double currentTime=0;
-
 	//Gives the Enum State a name that we can use in the code to reference the 3 actions
 
 	public void init()
@@ -131,7 +129,7 @@ public class ClimbRed extends OpMode
 			count=1;
 			screwPosition = 1;
 		}
-        if (currentTime>.9 && currentTime<1.4)//turn left
+        if (currentTime>.9 && currentTime<1.7)//turn left
 		{
 			count=3;
 		}
