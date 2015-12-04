@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /**
  *
  */
-public class ClimbRed extends OpMode
+public class ClimbBlue extends OpMode
 {
 	//Declare the motors being used and a timer called "time"
 	DcMotor leadScrew;//Declare Motors for Lead Screw
@@ -25,6 +25,11 @@ public class ClimbRed extends OpMode
 	DcMotor motorRight;
 	DcMotor motorRightBack;
 
+	Servo holdLeft;//Declares servo hooks on front for bars
+	Servo holdRight;
+
+	Servo leverBlue;//left lever
+	Servo leverRed;
 	int count=0;
 	int screwPosition=0;
 
@@ -46,6 +51,17 @@ public class ClimbRed extends OpMode
 		motorLeftBack = hardwareMap.dcMotor.get("motor_2");
 		motorLeft.setDirection(DcMotor.Direction.REVERSE);//reversed because the motors flipped
 		motorLeftBack.setDirection(DcMotor.Direction.REVERSE);
+
+		leverRed = hardwareMap.servo.get("leverRed");
+		leverBlue = hardwareMap.servo.get("leverBlue");
+		holdLeft = hardwareMap.servo.get("holdLeft");
+		holdRight = hardwareMap.servo.get("holdRight");
+
+		holdLeft.setPosition(.5);//sets initial hook position
+		holdRight.setPosition(.5);
+
+		leverBlue.setPosition(0);//Initial position
+		leverRed.setPosition(1);
 
 		time = new ElapsedTime();
 
@@ -129,20 +145,21 @@ public class ClimbRed extends OpMode
 			count=1;
 			screwPosition = 1;
 		}
-        if (currentTime>.9 && currentTime<1.7)//turn left
+        if (currentTime>.9 && currentTime<1.5)//turn left
 		{
 			count=3;
 		}
-		if(currentTime>1.4 && currentTime<5.4)//goes forward and drives up ramp
+		if(currentTime>2&& currentTime<6.5)//goes forward and drives up ramp
 		{
 			count=1;
 		}
-		if(currentTime>5.4 && currentTime<15)//stop
+		if(currentTime>6.5 && currentTime<15)//stop
 		{
 			screwPosition=3;
 		}
 		if(currentTime>15)
 		{
+
 			count=4;
 			screwPosition=5;
 		}
