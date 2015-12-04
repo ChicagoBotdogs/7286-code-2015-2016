@@ -34,7 +34,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("Auto Blue Floor", WWAutoBlueFloor.class);
     manager.register ("Auto Red Floor", WWAutoRedFloor.class);
     manager.register ("Auto LeadScrew Test",WWLeadScrewTest.class);
-    manager.register ("Climb Red Side",ClimbRed.class);
+    manager.register ("Climb Blue Side",ClimbBlue.class);
 
 
     
