@@ -202,7 +202,7 @@ public class TeleopBlue extends OpMode
 
 		if (gamepad1.x) //hooks up or down
 		{
-			holdLeft.setPosition(.25);
+			holdLeft.setPosition(0);
 			holdRight.setPosition(1);
 		}
 		if (gamepad1.y)
