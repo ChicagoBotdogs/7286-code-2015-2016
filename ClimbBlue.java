@@ -145,11 +145,11 @@ public class ClimbBlue extends OpMode
 			count=1;
 			screwPosition = 1;
 		}
-        if (currentTime>.9 && currentTime<1.5)//turn left
+        if (currentTime>.9 && currentTime<1.65)//turn left
 		{
 			count=3;
 		}
-		if(currentTime>2&& currentTime<6.5)//goes forward and drives up ramp
+		if(currentTime>1.65&& currentTime<6.5)//goes forward and drives up ramp
 		{
 			count=1;
 		}
