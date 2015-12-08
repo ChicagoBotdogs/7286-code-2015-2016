@@ -32,7 +32,7 @@ public class ClimbBlue extends OpMode
 	Servo leverRed;
 	int count=0;
 	int screwPosition=0;
-
+	double speed=.5;
 	//Gives the Enum State a name that we can use in the code to reference the 3 actions
 
 	public void init()
@@ -110,26 +110,26 @@ public class ClimbBlue extends OpMode
 
 		if (count==1)
 		{
-			motorLeft.setPower(1);
-			motorLeftBack.setPower(1);
-			motorRight.setPower(1);
-			motorRightBack.setPower(1);
+			motorLeft.setPower(speed);
+			motorLeftBack.setPower(speed);
+			motorRight.setPower(speed);
+			motorRightBack.setPower(speed);
 		}
 
 		if (count==2)
 		{
-			motorLeft.setPower(-1);
-			motorLeftBack.setPower(-1);
-			motorRight.setPower(1);
-			motorRightBack.setPower(1);
+			motorLeft.setPower(-speed);
+			motorLeftBack.setPower(-speed);
+			motorRight.setPower(speed);
+			motorRightBack.setPower(speed);
 		}
 
 		if (count==3)
 		{
-			motorLeft.setPower(1);
-			motorLeftBack.setPower(1);
-			motorRight.setPower(-1);
-			motorRightBack.setPower(-1);
+			motorLeft.setPower(speed);
+			motorLeftBack.setPower(speed);
+			motorRight.setPower(-speed);
+			motorRightBack.setPower(-speed);
 		}
 
 		if (count==4)
@@ -140,28 +140,24 @@ public class ClimbBlue extends OpMode
 			motorRightBack.setPower(0);
 		}
 
-		if(currentTime<.9)//go forward for 1 second  screw tilts up   APPROVED
+		if(currentTime<.42)//go forward for 1 second  screw tilts up   APPROVED
 		{
 			count=1;
 			screwPosition = 1;
 		}
-        if (currentTime>.9 && currentTime<1.65)//turn left
+
+        if (currentTime>.42&& currentTime<.1)
 		{
 			count=3;
 		}
-		if(currentTime>1.65&& currentTime<6.5)//goes forward and drives up ramp
+
+		if (currentTime>.72 && currentTime<1.37)
 		{
 			count=1;
 		}
-		if(currentTime>6.5 && currentTime<15)//stop
+		if (currentTime>1.37)
 		{
-			screwPosition=3;
-		}
-		if(currentTime>15)
-		{
-
 			count=4;
-			screwPosition=5;
 		}
 	}
 
