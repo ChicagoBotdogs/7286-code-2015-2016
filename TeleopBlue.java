@@ -200,15 +200,15 @@ public class TeleopBlue extends OpMode
 		}
 
 
-		if (gamepad1.x) //hooks up or down
+		if (gamepad1.left_bumper) //hooks up or down
 		{
 			holdLeft.setPosition(0);
 			holdRight.setPosition(1);
 		}
-		if (gamepad1.y)
+		if (gamepad1.right_bumper)
 		{
 			holdLeft.setPosition(1);
-			holdRight.setPosition(.25);
+			holdRight.setPosition(.15);
 		}
 
 		if (gamepad1.a) //hooks up or down
