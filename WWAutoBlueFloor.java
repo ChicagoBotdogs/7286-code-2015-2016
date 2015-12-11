@@ -44,7 +44,7 @@ public class WWAutoBlueFloor extends OpMode
 		if (count==0)
 		{
 			time.reset();
-			count =1;//time is zero
+			count =4;//time is zero
 		}
 
 		if (count==1)
@@ -78,20 +78,23 @@ public class WWAutoBlueFloor extends OpMode
 			motorRight.setPower(0);
 			motorRightBack.setPower(0);
 		}
-
-        if(currentTime<1)//if time is less than the time it takes to run forward then move forward
+        if (currentTime<10) 
+		{
+		count=4;
+		}
+        if(currentTime<11 && currentTime>10)//if time is less than the time it takes to run forward then move forward
 			count=1;
 
-		if (currentTime>1 && currentTime< 1.5)//turn right after moving forward
+		if (currentTime>11 && currentTime< 11.5)//turn right after moving forward
 		{
 			count = 3;
 		}
 
-		if (currentTime>1.5 && currentTime< 2.4)//turn right after moving forward
+		if (currentTime>11.5 && currentTime< 12.4)//turn right after moving forward
 		{
 			count = 1;
 		}
-		if(currentTime>2.4)
+		if(currentTime>12.4)
 		{
 			count =4;
 		}
