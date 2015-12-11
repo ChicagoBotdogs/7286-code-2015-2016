@@ -87,11 +87,11 @@ public class WWAutoBlueFloor extends OpMode
 			count = 3;
 		}
 
-		if (currentTime>1.5 && currentTime< 2.5)//turn right after moving forward
+		if (currentTime>1.5 && currentTime< 2.4)//turn right after moving forward
 		{
 			count = 1;
 		}
-		if(currentTime>2.5)
+		if(currentTime>2.4)
 		{
 			count =4;
 		}
