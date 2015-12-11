@@ -143,7 +143,6 @@ public class ClimbBlue extends OpMode
 		if(currentTime<.42)//go forward for 1 second  screw tilts up   APPROVED
 		{
 			count=1;
-			screwPosition = 1;
 		}
 
         if (currentTime>.42&& currentTime<.1)
