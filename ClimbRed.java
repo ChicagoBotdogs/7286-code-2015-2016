@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /**
  *
  */
-public class ClimbBlue extends OpMode
+public class ClimbRed extends OpMode
 {
 	//Declare the motors being used and a timer called "time"
 	DcMotor leadScrew;//Declare Motors for Lead Screw
