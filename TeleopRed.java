@@ -106,7 +106,7 @@ public class TeleopRed extends OpMode
 		holdLeft.setPosition(.5);//sets initial hook position
 		holdRight.setPosition(.5);
 
-		leverBlue.setPosition(0);//Initial position
+		leverBlue.setPosition(.5);//Initial position
 		leverRed.setPosition(1);
 
 		tiltLeft.setPosition(screwPosition1);//sets initial degree that the leadscrew is tilted
