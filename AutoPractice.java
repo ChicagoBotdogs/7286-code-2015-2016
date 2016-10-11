@@ -1,7 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.robotcontroller.external.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
  * This is NOT an opmode.
@@ -25,7 +28,7 @@ public class AutoPractice extends OpMode
 {
     /* Public OpMode members. */
     public DcMotor motor1;
-
+    DcMotor motor2;
     /* Constructor */
     public AutoPractice() {
     }
@@ -35,13 +38,13 @@ public class AutoPractice extends OpMode
         // save reference to HW Map
 
         motor1=hardwareMap.dcMotor.get("motor_1");
-
-        motor1.setPower(.5);
-
+        motor2=hardwareMap.dcMotor.get("motor_2");
+        motor1.setPower(1);
+        motor2.setPower(1);
 
 
         motor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
+        motor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
     }
